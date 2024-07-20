@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Toddler Fun Area | Learning: Alphabets</title>
+  
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-waqnr0');
+	src:url('../fonts/icomoon.eot?#iefix-waqnr0') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-waqnr0') format('woff'),
+		url('../fonts/icomoon.ttf?-waqnr0') format('truetype'),
+		url('../fonts/icomoon.svg?-waqnr0#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background: #ba423a;
+	background-size: 200vh;
+	font:14px/1.5em Verdana, Geneva, sans-serif;
+	color:#444;
+}
+
+@media (min-width:1024px) {
+body {
+	background-size: 100vw 100vh;
+	background-repeat: repeat;
+ }
+}
+
+a
+{
+   text-decoration:none;
+   outline:none;
+}
+
+
+a img {
+  border:none;
+}
+
+.container
+{
+  margin: 3% auto;
+  position:relative;
+  min-height:600px;
+}
+
+@media (min-width:1024px){
+.container{
+	width:960px;
+ }
+}
+
+.cf:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.off
+{
+  display:none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.no-show{
+  visibility:hidden;
+  opacity: 0;
+}
+
+.transition{
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  -ms-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+.loading
+{
+  font-size:1.5em;
+  font-weight:bold;
+  width:100%;
+  position:absolute;
+  top:30%;
+  left:30%;
+}
+
+#progressbar
+{
+  border:2px solid #777;
+  width:50%;
+}
+
+#progressbar p
+{
+  margin:0;
+  padding:1% 0;
+  width:0;
+  background-color:#f5f80c;
+}
+
+
+.side-nav{
+	list-style:none;
+	padding-left:0;
+}
+
+.side-nav li{
+	float:left;
+	width:25%;
+	text-align:center;
+}
+
+@media(min-width:992px){
+.side-nav{
+	float:left;
+	list-style:none;
+	width:15%;
+	padding-left:0;
+}
+.side-nav li{
+	float:none;
+	margin-bottom:15px;
+	width: 100%;
+}
+}
+
+@media(min-width:1024px){
+.side-nav li{
+	margin-bottom:0;
+}
+}
+
+.side-nav li a img{
+	width:100%;
+}
+
+@media (min-width:1200px){
+.side-nav li a img{
+	width:100%;
+}
+}
+
+.side-nav li:hover img{
+  -moz-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
+
+.main_content{
+	clear: both;
+	margin:0 auto 3%;
+	margin-top: 40px;
+	width:95%;
+	padding:2% 5%;
+	border:3px solid #7b8f8e;
+	border-radius:15px;
+	background: #c7dcda; /* Fall back for browsers that donot support transparency */
+	background: rgba(199, 220, 218, 0.8);
+}
+@media(min-width:992px){
+.main_content{
+	float:right;
+	width:80%;
+	clear:none;
+}
+}
+
+h1,
+h2,
+h3{
+	text-align:center;
+	line-height: 1.4;
+}
+
+.main_content a{
+	color:#00B;
+}
+
+.main_content a:hover{
+	text-decoration:underline;
+}
+
+.slide{
+	width:50%;
+	float:left;
+	text-align:center;
+}
+
+.slide img{
+	border-radius:12px;
+	border:1px solid #7b8f8e;
+	width:70%;
+}
+
+.games-slide a img,
+.learning-slide a img{
+	width:100%;
+}
+p{
+  border-radius: 5px;
+}
+.note{
+	clear:both;
+	text-align:center;
+	font-size:small;
+}
+
+.box-wrap{
+	float:left;
+	width:50%;
+	margin:0 auto;
+}
+.box{
+	padding:0 9% 5%;
+}
+
+@media(min-width: 768px){
+.box-wrap{
+	width:33.33%;
+}
+}
+
+.box h4{
+	text-align:center;
+	color:#900;
+	margin:10px auto;
+	line-height: normal;
+}
+
+.box img{
+	width:100%;
+	text-align:center;
+	border-radius:12px;
+	border:4px solid #bbb;
+	-webkit-box-shadow: 0px 3px 5px -1px #333;
+    box-shadow: 0px 3px 5px -1px #333;  
+}
+
+.box img:hover{
+   -webkit-transform: rotate(5deg);
+   -moz-transform: rotate(5deg);
+   -o-transform: rotate(5deg);
+   -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.scratch_games{
+	clear:both;
+	float:right;
+}
+
+.scratch_games a{
+	color:#fff;
+	font-weight:bold;
+	display:inline-block;
+	padding:10px;
+	line-height:20px;
+	background-color:#09F;
+	border-radius:30%/100%;
+	margin-left:5px;
+}
+
+#win-img,
+#game-over-img
+{
+  width:100%;
+  position:absolute;
+  top:20%;
+  left:10%;
+  display:none;
+  text-align:center;
+}
+
+#win-img img,
+#game-over-img img
+{
+	width:70%;
+}
+
+@media(min-width:600px){
+#win-img img,
+#game-over-img img
+{
+	width:50%;
+}
+}
+
+.button-box{
+	margin: 5px auto 10px;
+	position:relative;
+}
+
+.game-button{
+  font-size: 20px;
+  font-weight:bold;
+  color:white;
+  background-color:#005387;
+  border:2px solid #fff;
+  border-radius:5px;
+  padding:15px 40px;
+}
+
+.game-button:hover{
+  background-color:#0092bf;
+  cursor:pointer;
+}
+
+.speaker-controls{
+	position:absolute;
+	top:-5px;
+	left:150px;
+}
+
+.note{
+ clear:both;
+ text-align: justify; 
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.embed-responsive.embed-responsive-4by3 {
+   padding-bottom: 75%;
+}
+
+.slides{
+	position:relative;
+}
+
+#prev{
+	position:absolute;
+	background: red;
+	border: 1px solid black;
+	width: 70px;
+	height: 50px;
+	top:40%;
+	left:-7%;
+}
+
+#next{
+	position:absolute;
+	background: red;
+	border: 1px solid black;
+	width: 70px;
+	height: 50px;
+	top:40%;
+	right:-7%;
+}
+
+.icons{
+    font-family: 'icomoon';
+	font-size: 3rem;
+	margin-top: 300px;
+	cursor:pointer;
+	color:#444;
+}
+
+@media(min-width:768px){
+#prev{
+	left:-4%;
+}
+
+#next{
+	right:-4%;
+}
+	
+.icons{
+	font-size:25px;
+}
+}
+.icons span{
+font-size: 1rem;
+color: #fff;
+margin-left: 15px;
+}
+
+.hide{
+	visibility:hidden;
+}
+
+#slide-indicator{
+	clear:both;
+	margin-top:20px;
+}
+
+.facebook-like{
+	clear:both;
+	float:left;
+	margin:10px;
+}
+
+p.less-margin{
+	margin:0 auto 5px;
+}
+
+.hidden-xs{
+	display: none;
+}
+.visible-sm{
+	clear:both;
+	display: block;
+}
+
+@media (min-width:768px){
+.hidden-xs{
+	display: block;
+}
+.visible-sm{
+	display: none;
+}
+}
+    h1{
+	text-align:center;margin: -5px;
+}
+
+#leftside-display div,
+#rightside-display div{
+	display:none;border-radius: 10px;
+	height: 120px;
+}
+
+#leftside-display div.active,
+#rightside-display div.active{
+	display:block;
+}
+
+#leftside-display div{
+	background-color:#8889c9;
+	border-radius: 10px;
+}
+
+#leftside-display div,
+#rightside-display div img{
+	border:3px solid #7b8f8e;
+	margin:-5px 0 0;
+}
+
+#rightside-display div img{
+	width:100%;border-radius: 10px;
+	height: 230px;
+}
+
+h2{
+	font-size:30px;
+}
+
+@media(min-width:768px){
+h2{
+	font-size:40px;
+	padding:20px;
+}
+	
+#leftside-display div,
+#rightside-display div{
+	float:left;
+	width:48%;
+}
+
+
+#rightside-display div{
+	margin-left:4%;
+}
+	
+}
+
+@media(min-width:820px){
+h2{
+	font-size:60px;
+}
+}
+
+#slide-indicator p{
+	float:left;
+	width:40px;
+	height:40px;
+	border:3px solid #7b8f8e;
+	background-color:lightblue;
+	cursor:pointer;
+	opacity:0.7;
+	font-size:25px;
+	line-height:30px;
+	text-align:center;
+	margin:5px;
+}
+
+#slide-indicator p.active{
+	opacity:1;
+}
+.rtr{
+  width: 40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px;
+}
+  </style>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="learning1.js"></script>
+</head>
+<body>
+<div class="container cf">
+<nav>
+<ul class="side-nav">
+<li><a href = "page1.html" class="nav_home_img"><div class="rtr">🏠</div></a></li></ul></nav>
+  <div class="main_content cf">
+    
+    <div class="slides cf">
+    
+      <div id="leftside-display">
+        <div class="active">
+<h1>city</h1>
+<h2>المدينة</h2>
+<audio preload="auto" id="audio10" src="city.mp3"></audio></div>
+   
+<div>
+<h1>Country</h1>
+<h2>بلد</h2>
+<audio preload="auto" id="audio11" src="country.mp3"></audio></div>
+      
+<div>
+<h1>Capital</h1>
+<h2>عاصمة</h2>
+<audio preload="auto" id="audio6" src="capital.mp3"></audio></div>
+          
+<div>
+<h1>Street</h1>
+<h2>شارع</h2>
+<audio preload="auto" id="audio7" src="street.mp3"></audio></div>
+    
+<div>
+<h1>region</h1>
+<h2>منطقة</h2>
+<audio preload="auto" id="audio5" src="region.mp3"></audio></div>
+          
+<div>
+<h1>Village</h1>
+<h2>قرية</h2>
+<audio preload="auto" id="audio4" src="village.mp3"></audio></div>
+           
+<div>
+<h1>Countryside</h1>
+<h2>ريف</h2>
+<audio preload="auto" id="audio3" src="countryside.mp3"></audio></div>
+
+<div>
+<h1>Port</h1>
+<h2>مرفأ</h2>
+<audio preload="auto" id="audio10" src="port.mp3"></audio></div>
+   
+<div>
+<h1>embassy</h1>
+<h2>سفاره</h2>
+<audio preload="auto" id="audio11" src="embassy.mp3"></audio></div>
+
+
+<div>
+<h1>shop</h1>
+<h2>تسوق</h2>
+<audio preload="auto" id="audio6" src="shop.mp3"></audio></div>
+          
+<div>
+<h1>Tower</h1>
+<h2>برج</h2>
+<audio preload="auto" id="audio7" src="tower.mp3"></audio></div>
+    
+<div>
+<h1>Station</h1>
+<h2>محطة</h2>
+<audio preload="auto" id="audio5" src="station.mp3"></audio></div>
+
+<div>
+<h1>Airport</h1>
+<h2>مطار</h2>
+<audio preload="auto" id="audio11" src="airport.mp3"></audio>
+</div>
+          
+<div>
+<h1>Bridge</h1>
+<h2>جسر</h2>
+<audio preload="auto" id="audio4" src="bridge.mp3"></audio></div>
+
+<div>
+<h1>School</h1>
+<h2>مدرسة</h2>
+<audio preload="auto" id="audio4" src="school.mp3"></audio>
+</div>
+           
+<div>
+<h1>Hospital</h1>
+<h2>مستشفى</h2>
+<audio preload="auto" id="audio3" src="hospital.mp3"></audio></div>
+
+<div>
+<h1>University</h1>
+<h2>جامعة</h2>
+<audio preload="auto" id="audio10" src="university.mp3"></audio></div>
+   
+<div>
+<h1>Hotel</h1>
+<h2>الفندق</h2>
+<audio preload="auto" id="audio11" src="hotel.mp3"></audio></div>
+      
+<div>
+<h1>Museum</h1>
+<h2>متحف</h2>
+<audio preload="auto" id="audio6" src="museum.mp3"></audio></div>
+          
+<div>
+<h1>building</h1>
+<h2>مبنى</h2>
+<audio preload="auto" id="audio7" src="building.mp3"></audio></div>
+    
+<div>
+<h1>Statue</h1>
+<h2>تمثال</h2>
+<audio preload="auto" id="audio5" src="statue.mp3"></audio></div>
+          
+<div>
+<h1>exhibition</h1>
+<h2>معرض</h2>
+<audio preload="auto" id="audio3" src="exhibition.mp3"></audio></div>
+
+<div>
+<h1>castle</h1>
+<h2>قلعة</h2>
+<audio preload="auto" id="audio2" src="castle.mp3"></audio></div>
+  
+<div>
+<h1>institution</h1>
+<h2>مؤسسة</h2>
+<audio preload="auto" id="audio8" src="institution.mp3"></audio></div>
+
+<div>
+<h1>Factory</h1>
+<h2>مصنع</h2>
+<audio preload="auto" id="audio6" src="factory.mp3"></audio></div>
+          
+<div>
+<h1>garage</h1>
+<h2>كراج</h2>
+<audio preload="auto" id="audio7" src="garage.mp3"></audio></div>
+    
+<div>
+<h1>car</h1>
+<h2>سيارة</h2>
+<audio preload="auto" id="audio5" src="car.mp3"></audio></div>
+          
+<div>
+<h1>Train</h1>
+<h2>قطار</h2>
+<audio preload="auto" id="audio4" src="train.mp3"></audio></div>
+           
+<div>
+<h1>Truck</h1>
+<h2>شاحنة</h2>
+<audio preload="auto" id="audio3" src="truck.mp3"></audio></div>
+
+<div>
+<h1>airplane</h1>
+<h2>طائرة</h2>
+<audio preload="auto" id="audio10" src="airplane.mp3"></audio></div>
+   
+<div>
+<h1>ship</h1>
+<h2>سفينة</h2>
+<audio preload="auto" id="audio11" src="ship.mp3"></audio></div>
+
+
+<div>
+<h1>Bus</h1>
+<h2>حافله</h2>
+<audio preload="auto" id="audio6" src="bus.mp3"></audio></div>
+          
+<div>
+<h1>Boat</h1>
+<h2>قارب</h2>
+<audio preload="auto" id="audio7" src="boat.mp3"></audio></div>
+
+<div>
+<h1>Motorcycle</h1>
+<h2>دراجه ناريه</h2>
+<audio preload="auto" id="audio6" src="motorcycle.mp3"></audio></div>
+          
+<div>
+<h1>Bicycle</h1>
+<h2>دراجه هوائيه</h2>
+<audio preload="auto" id="audio7" src="bicycle.mp3"></audio></div>
+
+<div>
+<h1>Helicopter</h1>
+<h2>هليكوبتر</h2>
+<audio preload="auto" id="audio7" src="helicopter.mp3"></audio></div>
+
+<div>
+<h1>Taxi</h1>
+<h2>سيارة أجرة</h2>
+<audio preload="auto" id="audio7" src="taxi.mp3"></audio></div>
+        
+</div>
+<div id="slide-indicator" >
+<div id="rightside-display">
+<div class="active"><img src="city.jpg"/>
+<p>🔊</p></div>
+<div><img src="Country.jpg"/><p>🔊</p></div>
+<div><img src="Capital.jpg"/><p>🔊</p></div>
+<div><img src="Street.jpg"/><p>🔊</p></div>
+<div><img src="region.jpg"/><p>🔊</p></div>
+<div><img src="village.jpg"/><p>🔊</p></div>
+<div><img src="countryside.jpg"/><p>🔊</p></div>
+<div><img src="port.jpg"/><p>🔊</p></div>
+<div><img src="embassy.jpg"/><p>🔊</p></div>
+<div><img src="shop.jpg"/><p>🔊</p></div>
+<div><img src="tower.jpg"/><p>🔊</p></div>
+<div><img src="station.jpg"/><p>🔊</p></div>
+<div><img src="airport.jpg"/><p>🔊</p></div>
+<div><img src="bridge.jpg"/><p>🔊</p></div>
+<div><img src="school.jpg"/><p>🔊</p></div>
+<div><img src="hospital.jpg"/><p>🔊</p></div>
+<div><img src="university.jpg"/><p>🔊</p></div>
+<div><img src="hotel.jpg"/><p>🔊</p></div>
+<div><img src="museum.jpg"/><p>🔊</p></div>
+<div><img src="building.jpg"/><p>🔊</p></div>
+<div><img src="statue.jpg"/><p>🔊</p></div>
+<div><img src="exhibition.jpg"/><p>🔊</p></div>
+<div><img src="castle.jpg"/><p>🔊</p></div>
+<div><img src="institution.jpg"/><p>🔊</p></div>
+<div><img src="factory.jpg"/><p>🔊</p></div>
+<div><img src="garage.jpg"/><p>🔊</p></div>
+<div><img src="car.jpg"/><p>🔊</p></div>
+<div><img src="train.jpg"/><p>🔊</p></div>
+<div><img src="truck.jpg"/><p>🔊</p></div>
+<div><img src="airplane.jpg"/><p>🔊</p></div>
+<div><img src="ship.jpg"/><p>🔊</p></div>
+<div><img src="bus.jpg"/><p>🔊</p></div>
+<div><img src="boat.jpg"/><p>🔊</p></div>
+<div><img src="motorcycle.jpg"/><p>🔊</p></div>
+<div><img src="bicycle.jpg"/><p>🔊</p></div>
+<div><img src="helicopter.jpg"/><p>🔊</p></div>
+<div><img src="taxi.jpg"/><p>🔊</p></div>
+</div></div>
+
+<div class="controls">
+<p id="next" class="icons icon-next">
+<span>next</span></p>
+<p id="prev" class="icons icon-prev">
+<span>prev</span></p>
+</div></div></div></div>
+</body>
+</html>
